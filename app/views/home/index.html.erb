@@ -1,0 +1,11 @@
+<ul>
+  <li>Pagina home</li>
+  <li>Pagina admin</li>
+  <li>Pagina supervisor</li>
+  <li>Pagina colaborador</li>
+  <li>Bem vindo, <%= current_user.email %> (<%= current_user.admin? ? 'Admin' : 'Não admin' %>)</li>
+  <li><%=link_to "Sair", destroy_user_session_path, method: :delete %></li>
+</ul>
+
+<h1>Bem vindo a pagina principal</h1>
+<p>Acessada por todos após o login</p>
