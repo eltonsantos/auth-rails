@@ -30,5 +30,20 @@ class Ability
     #
     # See the wiki for details:
     # https://github.com/CanCanCommunity/cancancan/wiki/Defining-Abilities
+
+    self.merge Abilities::Admin.new(user) if user.admin? and user.role == 'superadmin'
+
+    self.merge Abilities::Supervisor.new(user) if user.supervisor? and user.role == 'auditor'
+    
+    self.merge Abilities::Collaborator.new(user) if user.collaborator? and user.role == 'collaborator'
+
+    self.merge Abilities::Superadmin.new(user) if user.role == 'superadmin'
+
+    self.merge Abilities::Auditor.new(user) if user.role == 'auditor'
+
+    self.merge Abilities::Manager.new(user) if user.role == 'manager'
+
+    self.merge Abilities::Registred.new(user) if user.role == 'registred'
+    
   end
 end
