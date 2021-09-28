@@ -2,19 +2,16 @@
   <li>
     <%=link_to "Pagina home", root_path %></li>
   <li>
-    <% if can? :admin, Menu %>
       <%=link_to "Pagina admin", admin_path %>
-    <% end %>
+
   </li>
   <li>
-    <% if can? :supervisor, Menu %>
       <%=link_to "Pagina supervisor", supervisor_path %>
-    <% end %>
+
   </li>
   <li>
-    <% if can? :collaborator, Menu %>
       <%=link_to "Pagina colaborador", collaborator_path %>
-    <% end %>
+
   </li>
   <li>
     <%=link_to "Pagina carros", cars_path %>

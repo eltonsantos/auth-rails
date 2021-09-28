@@ -5,7 +5,9 @@ module Abilities
     def initialize(user)
 
       cannot :manage, Car
-      can :manage, Menu
+      cannot :supervisor, Menu
+      cannot :collaborator, Menu
+      can :admin, Menu
    
     end
   end
