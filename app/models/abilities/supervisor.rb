@@ -3,7 +3,9 @@ module Abilities
     include CanCan::Ability
 
     def initialize(user)
-      cannot :manage, Car
+
+      can :supervisor, Menu
+      
     end
   end
 end

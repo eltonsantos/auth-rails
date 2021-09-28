@@ -1,7 +1,6 @@
 class MenuController < ApplicationController
 
-  def index
-  end
+  load_and_authorize_resource
 
   def admin
   end

@@ -4,9 +4,9 @@ Rails.application.routes.draw do
   resources :users
   resources :cars
   
-  get 'admin', to: "home#admin"
-  get 'supervisor', to: "home#supervisor"
-  get 'collaborator', to: "home#collaborator"
+  get 'admin', to: "menu#admin"
+  get 'supervisor', to: "menu#supervisor"
+  get 'collaborator', to: "menu#collaborator"
   
   root to: 'home#index'
   
