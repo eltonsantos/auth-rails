@@ -4,6 +4,7 @@ module Abilities
 
     def initialize(user)
       cannot :manage, Car
+      can :manage, HomeController
     end
   end
 end

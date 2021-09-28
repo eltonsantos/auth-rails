@@ -4,17 +4,14 @@ class HomeController < ApplicationController
   end
 
   def admin
-    user = current_user
-    authorize! :read, :admin if user.admin?
+    authorize! :read, :admin if current_user.admin?
   end
 
   def supervisor
-    user = current_user
-    authorize! :read, :supervisor if user.supervisor?
+    authorize! :read, :supervisor if current_user.supervisor?
   end
 
   def collaborator
-    user = current_user
-    authorize! :read, :collaborator if user.collaborator?
+    authorize! :read, :collaborator if current_user.collaborator?
   end
 end
