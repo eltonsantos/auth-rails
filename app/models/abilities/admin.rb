@@ -3,8 +3,10 @@ module Abilities
     include CanCan::Ability
 
     def initialize(user)
+
       cannot :manage, Car
-      can :manage, HomeController
+      can :manage, Menu
+   
     end
   end
 end
