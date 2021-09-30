@@ -1,24 +1,34 @@
 # README
+## Aplicação de teste em Rails
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### Aqui misturo diversas gems, o importante é o conhecimento
 
-Things you may want to cover:
+## Gems usadas
+- devise
+- cancancan
+- draper
+- caxlsx
+- byebug
 
-* Ruby version
+## Níveis de acesso
+Existem 7 níveis de acesso na aplicação:
+*- Admin:*
+  - Só pode ver as coisas do menu Admin
 
-* System dependencies
+*- Auditor:*
+  - Pode visualizar todos os usuários e carros
 
-* Configuration
+*- Colaborador (collaborator):*
+  - Só pode ver as coisas do menu Collaborator
 
-* Database creation
+*- Gerente (manager):*
+  - Pode fazer todas as operações referentes ao Carro
 
-* Database initialization
+*- Registrado (registred):*
+  - Pode fazer todas as operações referentes ao Carro do próprio usuário que cadastrou
 
-* How to run the test suite
+*- Superadmin:*
+  - Pode fazer todas as operações da aplicação
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+*- Supervisor:*
+  - Só pode ver as coisas do menu Supervisor
