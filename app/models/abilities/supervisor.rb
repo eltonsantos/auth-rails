@@ -3,9 +3,7 @@ module Abilities
     include CanCan::Ability
 
     def initialize(user)
-
       can :supervisor, Menu
-      
     end
   end
 end

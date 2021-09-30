@@ -35,7 +35,7 @@ class Ability
 
     self.merge Abilities::Supervisor.new(user) if user.supervisor? and user.role == 'auditor'
     
-    self.merge Abilities::Collaborator.new(user) if user.collaborator? and user.role == 'collaborator'
+    self.merge Abilities::Collaborator.new(user) if user.collaborator? and user.role == 'manager'
 
     self.merge Abilities::Superadmin.new(user) if user.role == 'superadmin'
 
