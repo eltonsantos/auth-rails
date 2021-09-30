@@ -1,6 +1,6 @@
 # Aplicação Rails para testar diversas gems
 
-#### Aqui misturo diversas gems, o importante é o conhecimento, talvez a aplicação não tenha muito sentido agora, mas depois vai ficar massa!
+Aqui misturo diversas gems, o importante é o conhecimento, talvez a aplicação não tenha muito sentido agora, mas depois vai ficar massa! Toda gem que eu for utilizando vou postando e cada funcionalidade da aplicação vou colocando aqui.
 ## Gems usadas
 - devise
 - cancancan
