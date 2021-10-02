@@ -5,7 +5,11 @@ class CarsController < ApplicationController
 
   # GET /cars or /cars.json
   def index
-    @cars = Car.where(user_id: current_user)
+    if current_user.role == 'manager' or current_user.role == 'auditor'
+      @cars = Car.all
+    else
+      @cars = Car.where(user_id: current_user)
+    end
   end
 
   # GET /cars/1 or /cars/1.json
@@ -24,7 +28,10 @@ class CarsController < ApplicationController
   # POST /cars or /cars.json
   def create
     @car = Car.new(car_params)
-    @car.user_id = current_user.id
+    
+    unless current_user.role == 'manager'
+      @car.user_id = current_user.id
+    end
     
     respond_to do |format|
       if @car.save

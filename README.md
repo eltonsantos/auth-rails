@@ -12,22 +12,22 @@ Aqui misturo diversas gems, o importante é o conhecimento, talvez a aplicação
 Existem 7 níveis de acesso na aplicação:
 
 **- Admin:**
-  - Só pode ver as coisas do menu Admin
+  - Só pode ver as coisas do menu admin
 
 **- Auditor:**
   - Pode visualizar todos os usuários e carros
 
 **- Colaborador (collaborator):**
-  - Só pode ver as coisas do menu Collaborator
+  - Só pode ver as coisas do menu collaborator
 
 **- Gerente (manager):**
-  - Pode fazer todas as operações referentes ao Carro
+  - Pode fazer todas as operações referentes ao carro
 
 **- Registrado (registred):**
-  - Pode fazer todas as operações referentes ao Carro do próprio usuário que cadastrou
+  - Pode fazer todas as operações referentes ao carro do próprio usuário que cadastrou
 
 **- Superadmin:**
   - Pode fazer todas as operações da aplicação
 
 **- Supervisor:**
-  - Só pode ver as coisas do menu Supervisor
+  - Só pode ver as coisas do menu supervisor
