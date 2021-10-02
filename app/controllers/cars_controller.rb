@@ -14,7 +14,7 @@ class CarsController < ApplicationController
 
   # GET /cars/new
   def new
-    @car = Car.new
+    @car = Car.new 
   end
 
   # GET /cars/1/edit
@@ -24,7 +24,8 @@ class CarsController < ApplicationController
   # POST /cars or /cars.json
   def create
     @car = Car.new(car_params)
-
+    @car.user_id = current_user.id
+    
     respond_to do |format|
       if @car.save
         format.html { redirect_to @car, notice: "Car was successfully created." }

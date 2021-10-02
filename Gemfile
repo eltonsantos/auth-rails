@@ -28,6 +28,7 @@ gem 'devise'
 gem 'cancancan'
 gem 'draper'
 gem 'caxlsx'
+gem 'ransack'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
