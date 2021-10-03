@@ -7,6 +7,8 @@ class UsersController < ApplicationController
   def index
     @q = User.ransack(params[:q])
     @users = @q.result
+
+    # @user = User.page params[:page]
   end
 
   # GET /users/1 or /users/1.json

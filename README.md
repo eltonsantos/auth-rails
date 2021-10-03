@@ -8,6 +8,9 @@ Aqui misturo diversas gems, o importante é o conhecimento, talvez a aplicação
 - caxlsx
 - byebug
 - ransack
+- rspec
+- kaminari
+- simple_form
 
 ## Níveis de acesso
 Existem 7 níveis de acesso na aplicação:
@@ -34,7 +37,6 @@ Existem 7 níveis de acesso na aplicação:
   - Só pode ver as coisas do menu supervisor
 
 ## Próximos passos
-- Implementar ransack na tela de listagem dos usuários para pesquisar por nome, email, carro ou role
 - Estudar draper para implementar em algum lugar da app
 - Estudar caxlsx para implementar em algum lugar da app
 - ActiveStorage para poder adicionar imagem do usuário e no carro
