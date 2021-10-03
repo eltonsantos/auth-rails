@@ -2,6 +2,28 @@
 
 <h1>Users</h1>
 
+<%= search_form_for @q do |f| %>
+  <%= f.label :name_cont %>
+  <%= f.search_field :name_cont %>
+
+  <%= f.label :email_cont %>
+  <%= f.search_field :email_cont %>
+
+  <%= f.label :admin_eq, 'Admin?' %>
+  <%= f.check_box :admin_eq, {}, 1, nil %>
+
+  <%= f.label :supervisor_eq, 'Supervisor?' %>
+  <%= f.check_box :supervisor_eq, {}, 1, nil %>
+
+  <%= f.label :collaborator_eq, 'Collaborator?' %>
+  <%= f.check_box :collaborator_eq, {}, 1, nil %>
+
+  <%= f.label :role %>
+  <%= f.select :role_eq, User.roles.map { |r| [r[0], r[1].to_i] }, include_blank: true %>
+
+  <%= f.submit name: '' %>
+<% end %>
+
 <table>
   <thead>
     <tr>
