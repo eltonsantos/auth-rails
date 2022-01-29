@@ -23,7 +23,11 @@
 
   <div class="field">
     <%= form.label :user %>
-    <%= form.collection_select :user_id, User.where(role: 'registred'), :id, :name %>  
+    <% if current_user.role == 'manager' %>
+      <%= form.collection_select :user_id, User.where(role: 'registred'), :id, :name %>
+    <% else %>
+      <%= form.collection_select :user_id, User.where(id: current_user.id), :id, :name %>
+    <% end %>
   </div>
 
   <div class="actions">

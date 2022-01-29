@@ -11,6 +11,7 @@ Aqui misturo diversas gems, o importante é o conhecimento, talvez a aplicação
 - rspec
 - kaminari
 - simple_form
+- paranoia
 
 ## Níveis de acesso
 Existem 7 níveis de acesso na aplicação:
@@ -38,7 +39,8 @@ Existem 7 níveis de acesso na aplicação:
 
 ## Próximos passos
 - Estudar draper para implementar em algum lugar da app
-- Estudar caxlsx para implementar em algum lugar da app
+- Estudar caxlsx para implementar em algum lugar da app 
+- Estudar paranoia para implementar em alguma auditoria
 - ActiveStorage para poder adicionar imagem do usuário e no carro
 - Kaminari para paginação
 - Bootstrap para deixar a aplicação bonita
