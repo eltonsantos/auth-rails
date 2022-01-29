@@ -11,7 +11,7 @@ Aqui misturo diversas gems, o importante é o conhecimento, talvez a aplicação
 - rspec
 - kaminari
 - simple_form
-- paranoia
+- audited
 
 ## Níveis de acesso
 Existem 7 níveis de acesso na aplicação:
