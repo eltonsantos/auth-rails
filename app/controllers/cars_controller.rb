@@ -9,7 +9,9 @@ class CarsController < ApplicationController
       @q = Car.ransack(params[:q])
       @cars = @q.result
     else
-      @cars = Car.where(user_id: current_user)
+      # @cars = Car.where(user_id: current_user)
+      @q = Car.where(user_id: current_user).ransack(params[:q])
+      @cars = @q.result
     end
   end
 

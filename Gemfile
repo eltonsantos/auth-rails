@@ -31,6 +31,7 @@ gem 'caxlsx'
 gem 'ransack'
 gem 'kaminari'
 gem 'simple_form'
+gem "paranoia"
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
