@@ -9,4 +9,5 @@ class User < ApplicationRecord
   enum role: { superadmin: 0, auditor: 1, manager: 2, registred: 3 }
 
   has_many :cars
+
 end
