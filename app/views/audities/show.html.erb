@@ -1,0 +1,50 @@
+<h1>
+ID da auditoria:
+  <%= @audity.id %>
+</h1>
+
+----------------------------------------------------------------
+
+<p>
+  <strong>Objeto auditado:</strong>
+  <%= @audity.auditable_type %>
+</p>
+
+<p>
+  <strong>Registrado em:</strong>
+  <%= @audity.created_at.strftime("%d/%m/%Y - %H:%M:%S") %>
+</p>
+
+<p>
+  <strong>Tipo da ação:</strong>
+  <%= @audity.action %>
+</p>
+
+<p>
+  <strong>Autor da Ação:</strong>
+  <%= @audity.user.name %>
+</p>
+
+<p>
+  <strong>IP do autor:</strong>
+  <%= @audity.remote_address %>
+</p>
+
+----------------------------------------------------------------
+
+<h3>Modificações</h3>
+
+<p>
+  <% @audity.audited_changes.each do |changes| %>
+    <% case @audity.action %>
+    <% when 'create' %>
+      <%= render 'create', changes: changes %>
+    <% when 'update' %>
+      <%= render 'update', changes: changes %>
+    <% when 'destroy' %>
+      <%= render 'destroy', changes: changes %>
+    <% end %>
+  <% end %>
+</p>
+
+<%= link_to 'Back', audities_path %>

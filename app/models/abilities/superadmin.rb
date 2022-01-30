@@ -3,7 +3,7 @@ module Abilities
     include CanCan::Ability
 
     def initialize(user)
-      can :manage, User
+      can :manage, :all
     end
   end
 end

@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'audity/index'
+  resources :audities
   devise_for :users, :path_prefix => 'devise'
   
   resources :users

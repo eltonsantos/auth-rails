@@ -1,0 +1,48 @@
+<h1>Página de Auditoria</h1>
+
+<%= search_form_for @q do |f| %>
+  <%= f.label :id_eq, "ID da auditoria" %>
+  <%= f.search_field :id_eq %>
+
+  <%= f.label :auditable_type_eq, "Objeto auditável" %>
+  <%= f.select :auditable_type_eq, Audity.all.map { |a| [a.auditable_type] }.uniq, include_blank: true %>
+
+  <%= f.label :auditable_id_eq, "ID do objeto auditável" %>
+  <%= f.search_field :auditable_id_eq %>
+
+  <%= f.label :user_name_cont, "Autor" %>
+  <%= f.select :user_name_cont, Audity.all.map { |u| [u.user.name] }.uniq, include_blank: true %>
+
+  <%= f.label :action_eq, "Ação" %>
+  <%= f.select :action_eq, Audity.all.map { |a| [a.action] }.uniq, include_blank: true %>
+
+  <%= f.submit %>
+<% end %>
+
+<table>
+  <thead>
+    <tr>
+      <th>ID da auditoria</th>
+      <th>Objeto auditável</th>
+      <th>ID do Objeto auditável</th>
+      <th>Autor (id)</th>
+      <th>Tipo da ação</th>
+      <th>Realizado em</th>
+      <th colspan="1"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @audities.each do |audit| %>
+      <tr>
+        <td><%= audit.id %></td>
+        <td><%= audit.auditable_type %></td>
+        <td><%= audit.auditable_id %></td>
+        <td><%= audit.user.name %> (<%= audit.user.id %>)</td>
+        <td><%= audit.action %></td>
+        <td><%= audit.created_at.strftime("%d/%m/%Y") %></td>
+        <td><%= link_to 'Ver detalhes', audit %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

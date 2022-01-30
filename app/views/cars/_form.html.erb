@@ -25,6 +25,8 @@
     <%= form.label :user %>
     <% if current_user.role == 'manager' %>
       <%= form.collection_select :user_id, User.where(role: 'registred'), :id, :name %>
+    <% elsif current_user.role == 'superadmin' %>
+      <%= form.collection_select :user_id, User.all, :id, :name %>
     <% else %>
       <%= form.collection_select :user_id, User.where(id: current_user.id), :id, :name %>
     <% end %>

@@ -5,6 +5,7 @@ module Abilities
     def initialize(user)
       can :read, User
       can :read, Car
+      can :read, Audity
     end
   end
 end

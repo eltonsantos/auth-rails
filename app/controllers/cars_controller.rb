@@ -5,7 +5,7 @@ class CarsController < ApplicationController
 
   # GET /cars or /cars.json
   def index
-    if current_user.role == 'manager' or current_user.role == 'auditor'
+    if current_user.role == 'manager' or current_user.role == 'auditor' or current_user.role == 'superadmin'
       @q = Car.ransack(params[:q])
       @cars = @q.result
     else
