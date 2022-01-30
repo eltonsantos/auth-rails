@@ -21,7 +21,10 @@
   </li>
   <li>Bem vindo,
     <%= current_user.name %>
-    (<%= current_user.role %>)
+    (Regra: <strong><%= current_user.role %></strong>)
+    <strong>Admin:</strong> <%= current_user.admin? %>
+    <strong>Supervisor:</strong> <%= current_user.supervisor? %>
+    <strong>Collaborator:</strong> <%= current_user.collaborator? %>
   </li>
   <li>
     <%=link_to "Sair", destroy_user_session_path, method: :delete %>

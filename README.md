@@ -20,7 +20,7 @@ Existem 7 níveis de acesso na aplicação:
   - Só pode ver as coisas do menu admin
 
 **- Auditor:**
-  - Pode visualizar todos os usuários e carros
+  - Pode visualizar todos os usuários, carros e a página de auditoria
 
 **- Colaborador (collaborator):**
   - Só pode ver as coisas do menu collaborator
@@ -32,7 +32,7 @@ Existem 7 níveis de acesso na aplicação:
   - Pode fazer todas as operações referentes ao carro do próprio usuário que cadastrou
 
 **- Superadmin:**
-  - Pode fazer todas as operações da aplicação
+  - Pode fazer todas as operações da aplicação (modo deus)
 
 **- Supervisor:**
   - Só pode ver as coisas do menu supervisor
