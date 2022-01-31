@@ -39,6 +39,7 @@ Existem 7 níveis de acesso na aplicação:
 
 ## Próximos passos
 - Estudar draper para implementar em algum lugar da app
+- Estudar wicked_pdf para implementar em algum lugar da app
 - Estudar caxlsx para implementar em algum lugar da app 
 - Estudar audity para implementar em alguma auditoria
 - ActiveStorage para poder adicionar imagem do usuário e no carro

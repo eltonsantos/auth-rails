@@ -30,7 +30,9 @@ gem 'caxlsx'
 gem 'ransack'
 gem 'kaminari'
 gem 'simple_form'
-gem "audited"
+gem 'audited'
+gem 'wicked_pdf'
+gem 'wkhtmltopdf-binary'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
