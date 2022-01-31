@@ -33,6 +33,9 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
+
+        audit! :update_user, @user, payload: user_params
+
         format.html { redirect_to @user, notice: "User was successfully created." }
         format.json { render :show, status: :created, location: @user }
       else

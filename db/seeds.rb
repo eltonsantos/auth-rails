@@ -21,3 +21,5 @@ Car.create(name: "Escort", marca: "Ford", user_id: 9)
 Car.create(name: "Golf", marca: "Volkswagen", user_id: 9)
 Car.create(name: "Siena", marca: "Fiat", user_id: 10)
 Car.create(name: "Onix", marca: "Chevrolet", user_id: 10)
+
+puts "Criando as auditorias"
