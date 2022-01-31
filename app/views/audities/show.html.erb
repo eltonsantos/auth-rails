@@ -1,6 +1,6 @@
 <h1>
 ID da auditoria:
-  <%= @audity.id %>
+<%= @audity.id %>
 </h1>
 
 ----------------------------------------------------------------
@@ -22,7 +22,7 @@ ID da auditoria:
 
 <p>
   <strong>Autor da Ação:</strong>
-  <%= @audity.user.name %>
+  <%= @audity.user&.name %>
 </p>
 
 <p>
