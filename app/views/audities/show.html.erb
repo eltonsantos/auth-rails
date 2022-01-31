@@ -22,7 +22,7 @@ ID da auditoria:
 
 <p>
   <strong>Autor da Ação:</strong>
-  <%= @audity.user&.name %>
+  <%= @audity.user&.name.present? ? @audity.user&.name : "Sistema" %>
 </p>
 
 <p>

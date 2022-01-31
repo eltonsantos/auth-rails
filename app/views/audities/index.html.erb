@@ -38,7 +38,11 @@
         <td><%= audit.id %></td>
         <td><%= audit.auditable_type %></td>
         <td><%= audit.auditable_id %></td>
-        <td><%= audit.user&.name %> (<%= audit.user&.id %>)</td>
+        <% if audit.user&.name.present? %>
+          <td><%= audit.user&.name %> (<%= audit.user&.id %>)</td>
+        <% else %>
+          <td>Sistema</td>
+        <% end %>
         <td><%= audit.action %></td>
         <td><%= audit.created_at.strftime("%d/%m/%Y") %></td>
         <td><%= link_to 'Ver detalhes', audit %></td>
