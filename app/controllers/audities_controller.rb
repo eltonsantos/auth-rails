@@ -4,7 +4,7 @@ class AuditiesController < ApplicationController
 
   def index
     @q = Audity.all.ransack(params[:q])
-    @audities = @q.result
+    @audities = @q.result.page(params[:page])
   end
 
   def show

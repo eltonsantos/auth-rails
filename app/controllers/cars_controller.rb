@@ -7,11 +7,11 @@ class CarsController < ApplicationController
   def index
     if current_user.role == 'manager' or current_user.role == 'auditor' or current_user.role == 'superadmin'
       @q = Car.ransack(params[:q])
-      @cars = @q.result
+      @cars = @q.result.page(params[:page])
     else
       # @cars = Car.where(user_id: current_user)
       @q = Car.where(user_id: current_user).ransack(params[:q])
-      @cars = @q.result
+      @cars = @q.result.page(params[:page])
     end
   end
 

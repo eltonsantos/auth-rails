@@ -6,7 +6,7 @@ class UsersController < ApplicationController
   # GET /users or /users.json
   def index
     @q = User.ransack(params[:q])
-    @users = @q.result
+    @users = @q.result.page(params[:page])
 
     # @user = User.page params[:page]
   end
