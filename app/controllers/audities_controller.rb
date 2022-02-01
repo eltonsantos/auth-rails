@@ -8,6 +8,14 @@ class AuditiesController < ApplicationController
   end
 
   def show
+    respond_to do |format|
+      format.html
+      format.pdf do
+        render pdf: "#{@audity.id}",
+               template: "audities/show.html.erb",
+               layout: "pdf.html"
+      end
+    end
   end
 
 end
