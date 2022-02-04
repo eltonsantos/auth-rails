@@ -10,6 +10,7 @@
       </ul>
     </div>
   <% end %>
+  
 
   <div class="field">
     <%= form.label :name %>
@@ -20,6 +21,11 @@
     <%= form.label :email %>
     <%= form.email_field :email %>
   </div>
+
+  <%= form.fields_for :profile do |p| %>
+    <%= p.label :description %>
+    <%= p.text_field :description %>
+  <% end %>
 
   <div class="field">
     <%= form.label :password %>

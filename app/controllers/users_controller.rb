@@ -18,6 +18,7 @@ class UsersController < ApplicationController
   # GET /users/new
   def new
     @user = User.new
+    @user.build_profile
   end
 
   # GET /users/1/edit
@@ -34,7 +35,7 @@ class UsersController < ApplicationController
     respond_to do |format|
       if @user.save
 
-        audit! :update_user, @user, payload: user_params
+        # audit! :update_user, @user, payload: user_params
 
         format.html { redirect_to @user, notice: "User was successfully created." }
         format.json { render :show, status: :created, location: @user }
