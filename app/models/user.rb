@@ -10,8 +10,11 @@ class User < ApplicationRecord
 
   has_many :cars
   has_one :profile
+  has_many :addresses
   has_one_attached :avatar
 
   accepts_nested_attributes_for :profile, reject_if: :all_blank, allow_destroy: true
+
+  accepts_nested_attributes_for :addresses, reject_if: :all_blank, allow_destroy: true
 
 end
