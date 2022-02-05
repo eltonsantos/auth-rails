@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :posts
+  resources :addresses
   resources :profiles
   resources :audities
   devise_for :users, :path_prefix => 'devise'

@@ -31,8 +31,6 @@
   </li>
 </ul>
 
-<% if action_name.to_sym == :show %>
   <%= link_to 'Back', audities_path %>
   <br /><br />
-  <%= link_to "DOWNLOAD PDF", audity_path(@audity, format: :pdf) %>
-<% end %>
+  <%# <%= link_to "DOWNLOAD PDF", audity_path(@audity, format: :pdf) %>
