@@ -19,6 +19,7 @@ class UsersController < ApplicationController
   def new
     @user = User.new
     @user.build_profile
+    @addresses = @user.addresses.build
   end
 
   # GET /users/1/edit
@@ -77,6 +78,6 @@ class UsersController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def user_params
-      params.require(:user).permit(:name, :email, :password, :password_confirmation, :admin, :supervisor, :collaborator, :role, profile_attributes: [:description], addresses_attributes: [:street, :city, :state, :zip, :_destroy])
+      params.require(:user).permit(:name, :email, :password, :password_confirmation, :admin, :supervisor, :collaborator, :role, profile_attributes: [:description], addresses_attributes: [:id, :street, :city, :state, :zip, :_destroy])
     end
 end

@@ -11,7 +11,7 @@ class User < ApplicationRecord
   has_one_attached :avatar
   has_one :profile
   has_many :cars
-  has_many :addresses
+  has_many :addresses, inverse_of: :user, dependent: :destroy
   has_many :comments
   has_many :posts
 

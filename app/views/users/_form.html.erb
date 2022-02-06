@@ -11,7 +11,6 @@
     </div>
   <% end %>
   
-
   <div class="field">
     <%= form.label :name %>
     <%= form.text_field :name %>
@@ -43,21 +42,19 @@
     </fieldset>
   <% end %>
 
-  <br />
+  <div id="addresses">
+    <%= form.fields_for :addresses do |address| %>
+      <fieldset>
+        <legend>Address</legend>
+        <%= render 'address_fields', f: address %>
+      </fieldset>
+    <% end %>
 
-  <%= form.fields_for :address do |a| %>
-    <fieldset>
-      <legend>Address</legend>
-      <%= a.label :street %>
-      <%= a.text_field :street %>
-      <%= a.label :city %>
-      <%= a.text_field :city %>
-      <%= a.label :state %>
-      <%= a.text_field :state %>
-      <%= a.label :zip %>
-      <%= a.text_field :zip %>
-    </fieldset>
-  <% end %>
+    <div class="links">
+      <%= link_to_add_association 'Add Address', form, :addresses %>
+    </div>
+    
+  </div>
 
   <fieldset>
     <legend>Profile Role</legend>
