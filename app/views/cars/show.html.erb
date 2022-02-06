@@ -15,5 +15,39 @@
   <%= @car.user.name %>
 </p>
 
+----------------------------------------------------------------
+<h3>Comments (<%= @car.comments.size %>)</h3>
+
+<% @car.comments.each do |comment| %>
+  <p>
+    <b>User:</b>
+    <%= comment.user.name %>
+  </p>
+  <p>
+    <b>Created At:</b>
+    <%= comment.created_at.strftime("%d/%m/%Y") %>
+  </p>
+  <p>
+    <b>Comment:</b>
+    <%= comment.body %>
+  </p>
+  <hr />
+<% end %>
+
+<h3>Send comment:</h3>
+
+<%= simple_form_for [@car, Comment.new] do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+  <%= f.input :body, label: false  %>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
+
+----------------------------------------------------------------
+<br />
 <%= link_to 'Edit', edit_car_path(@car) %> |
 <%= link_to 'Back', cars_path %>
