@@ -4,10 +4,28 @@ class PostsController < ApplicationController
   # GET /posts or /posts.json
   def index
     @posts = Post.all
+
+    current_user.posts.each do |post|
+      comments = Comment.new
+      Comment.where(commentable: post).each do |comment|
+        cmts = Comment.where(commentable: comment).order("created_at ASC")
+        comment.push({
+          user: comment.user,
+          comment: comment,
+          comments: cmts
+        })
+      end
+
+      @post.push({
+        post: post,
+        comments: comments
+      })
+    end
   end
 
   # GET /posts/1 or /posts/1.json
   def show
+    @comment = @commentable.comments.new()
   end
 
   # GET /posts/new
