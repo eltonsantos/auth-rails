@@ -26,26 +26,31 @@
 </p>
 
 ----------------------------------------------------------------
-<h3>Comments</h3>
+<h3>Comments (<%= @post.comments.size %>)</h3>
 
-<p>
-  <b>User:</b>
-    <%= @post.user.name %>
-</p>
-<p>
-  <b>Comment:</b>
-</p>
+<% @post.comments.each do |comment| %>
+  <p>
+    <b>User:</b>
+    <%= comment.user.name %>
+  </p>
+  <p>
+    <b>Created At:</b>
+    <%= comment.created_at.strftime("%d/%m/%Y") %>
+  </p>
+  <p>
+    <b>Comment:</b>
+    <%= comment.body %>
+  </p>
+  <hr />
+<% end %>
 
-----------------------------------------------------------------
 <h3>Send comment:</h3>
 
-<%= simple_form_for(@comment) do |f| %>
+<%= simple_form_for [@post, Comment.new] do |f| %>
   <%= f.error_notification %>
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
-  <div class="form-inputs">
-    <%= f.input :comment %>
-  </div>
+  <%= f.input :body, label: false  %>
 
   <div class="form-actions">
     <%= f.button :submit %>

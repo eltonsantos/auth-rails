@@ -1,10 +1,16 @@
 Rails.application.routes.draw do
-  resources :posts
-  resources :audities
-  devise_for :users, :path_prefix => 'devise'
   
+  resources :posts do
+    resources :comments, module: :posts
+  end
+  
+  resources :cars do
+    resources :comments, module: :cars
+  end
+  
+  devise_for :users, :path_prefix => 'devise'
   resources :users
-  resources :cars
+  resources :audities
   
   get 'admin', to: "menu#admin"
   get 'supervisor', to: "menu#supervisor"
@@ -12,5 +18,4 @@ Rails.application.routes.draw do
   
   root to: 'home#index'
   
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
