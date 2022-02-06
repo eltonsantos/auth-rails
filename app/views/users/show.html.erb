@@ -30,5 +30,22 @@
   <%= @user.role %>
 </p>
 
+<p>
+  <strong>Profile:</strong>
+  <%= @user.profile&.description %>
+</p>
+
+<h4>Address(es)</h4>
+<ul>
+  <% @user.addresses.each do |address| %>
+    <li>Street: <%= address.street %></li>
+    <li>City: <%= address.city %></li>
+    <li>State: <%= address.state %></li>
+    <li>Zip code: <%= address.zip %></li>
+    -------------
+  <% end %>
+</ul>
+
+
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>

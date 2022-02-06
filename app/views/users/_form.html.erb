@@ -43,11 +43,8 @@
   <% end %>
 
   <div id="addresses">
-    <%= form.fields_for :addresses do |address| %>
-      <fieldset>
-        <legend>Address</legend>
-        <%= render 'address_fields', f: address %>
-      </fieldset>
+    <%= form.fields_for :addresses do |address| %>    
+      <%= render 'address_fields', f: address %>
     <% end %>
 
     <div class="links">

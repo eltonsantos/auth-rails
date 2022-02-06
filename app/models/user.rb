@@ -9,7 +9,7 @@ class User < ApplicationRecord
   enum role: { superadmin: 0, auditor: 1, manager: 2, registred: 3 }
 
   has_one_attached :avatar
-  has_one :profile
+  has_one :profile, dependent: :destroy
   has_many :cars
   has_many :addresses, inverse_of: :user, dependent: :destroy
   has_many :comments
