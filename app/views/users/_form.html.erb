@@ -50,7 +50,6 @@
     <div class="links">
       <%= link_to_add_association 'Add Address', form, :addresses %>
     </div>
-    
   </div>
 
   <fieldset>
@@ -84,3 +83,15 @@
     <%= form.submit %>
   </div>
 <% end %>
+
+<script type="text/javascript">
+  $(document).on('turbolinks:load', function() {
+    $('#addresses').on('cocoon:after-insert', function(e, added_el) {
+      return added_el.find("input").first().focus();
+    });
+    return $('#addresses').on('cocoon:before-remove', function(e, el_to_remove) {
+      $(this).data('remove-timeout', 1000);
+      return el_to_remove.fadeOut(1000);
+    });
+  });
+</script>
