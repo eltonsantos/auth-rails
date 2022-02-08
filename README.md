@@ -12,6 +12,9 @@ Aqui misturo diversas gems, o importante é o conhecimento, talvez a aplicação
 - kaminari
 - simple_form
 - audited
+- wicked_pdf
+- cocoon
+- pg
 
 ## Níveis de acesso
 Existem 7 níveis de acesso na aplicação:
