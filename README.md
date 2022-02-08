@@ -44,10 +44,11 @@ Existem 7 níveis de acesso na aplicação:
 - Estudar audity para implementar em alguma auditoria
 - Estudar cocoon
 - Estudar polimorfismo
-- Implementar sistema de cookie
+- Implementar sistema de cookie para política de privacidade
 - Implementar tema noturno
 - ActiveStorage para poder adicionar imagem do usuário e no carro
 - Kaminari para paginação
 - Bootstrap para deixar a aplicação bonita
+- Fontawesome
 - Implementar simple form para substituir o form padrão do rails
 - Rspec para testes
