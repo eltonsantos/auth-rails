@@ -45,6 +45,8 @@ Existem 7 níveis de acesso na aplicação:
 - Estudar wicked_pdf para implementar em algum lugar da app
 - Estudar caxlsx para implementar em algum lugar da app 
 - Estudar audity para implementar em alguma auditoria
+- Estudar mais sobre byebug
+- Estudar rubocop
 - Estudar cocoon
 - Estudar polimorfismo
 - Implementar sistema de cookie para política de privacidade

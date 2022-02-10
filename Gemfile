@@ -34,6 +34,12 @@ gem 'audited'
 gem 'wicked_pdf'
 gem 'wkhtmltopdf-binary'
 gem 'cocoon'
+gem 'cpf_cnpj'
+gem 'ckeditor'
+gem 'validators'
+gem 'inherited_resources'
+gem 'has_scope'
+
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
@@ -43,6 +49,14 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'rspec-rails'
   gem 'sqlite3', '~> 1.4'
+  gem 'rubocop-rails', require: false
+  gem 'faker'
+  gem 'pry'
+  gem 'pry-rails'
+  gem 'pry-byebug'
+  gem 'brakeman'
+  gem 'better_errors'
+
 end
 
 group :development do
