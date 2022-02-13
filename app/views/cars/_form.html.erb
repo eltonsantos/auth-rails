@@ -22,13 +22,17 @@
   </div>
 
   <div class="field">
-    <%= form.label :user %>
     <% if current_user.role == 'manager' || current_user.admin? %>
+      <%= form.label :user %>
       <%= form.collection_select :user_id, User.where(role: 'registred'), :id, :name %>
     <% elsif current_user.role == 'superadmin' && !current_user.admin? %>
+      <%= form.label :user %>
       <%= form.collection_select :user_id, User.all, :id, :name %>
     <% else %>
-      <%= form.collection_select :user_id, User.where(id: current_user.id), :id, :name %>
+      <% if current_user.role != 'registred' %>
+        <%= form.label :user %>
+        <%= form.collection_select :user_id, User.where(id: current_user.id), :id, :name %>
+      <% end %>
     <% end %>
   </div>
 

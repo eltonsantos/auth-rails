@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   
+  resources :moderations
+  
   resources :posts do
     resources :comments, module: :posts
   end
@@ -10,6 +12,7 @@ Rails.application.routes.draw do
   
   devise_for :users, :path_prefix => 'devise'
   resources :users
+  
   resources :audities
   
   get 'admin', to: "menu#admin"
