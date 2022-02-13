@@ -4,13 +4,13 @@ class CommentsController < ApplicationController
     @comment = @commentable.comments.new(comment_params)
     @comment.user = current_user
     @comment.save
-    redirect_to @commentable, notice: 'Comment was created successfully posted.'
+    redirect_to @commentable, notice: 'The comment has been created and will be posted after admin approval.'
   end
 
   private
 
     def comment_params
-      params.require(:comment).permit(:body)
+      params.require(:comment).permit(:body, :approved)
     end
 
 end

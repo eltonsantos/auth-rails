@@ -26,9 +26,9 @@
 </p>
 
 ----------------------------------------------------------------
-<h3>Comments (<%= @post.comments.size %>)</h3>
+<h3>Comments (<%= @post.comments.where(approved: true).size %>)</h3>
 
-<% @post.comments.each do |comment| %>
+<% @post.comments.where(approved: true).each do |comment| %>
   <p>
     <b>User:</b>
     <%= comment.user.name %>
@@ -40,6 +40,10 @@
   <p>
     <b>Comment:</b>
     <%= comment.body %>
+  </p>
+  <p>
+    <b>Comment:</b>
+    <%= comment.approved %>
   </p>
   <hr />
 <% end %>

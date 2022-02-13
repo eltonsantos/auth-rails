@@ -89,7 +89,7 @@ ActiveRecord::Schema.define(version: 2022_02_13_130902) do
     t.integer "commentable_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.boolean "approved"
+    t.boolean "approved", default: false
     t.index ["commentable_type", "commentable_id"], name: "index_comments_on_commentable"
     t.index ["user_id"], name: "index_comments_on_user_id"
   end
