@@ -168,8 +168,6 @@ GEM
     minitest (5.15.0)
     msgpack (1.4.4)
     nio4r (2.5.8)
-    nokogiri (1.13.1-x86_64-darwin)
-      racc (~> 1.4)
     nokogiri (1.13.1-x86_64-linux)
       racc (~> 1.4)
     orm_adapter (0.5.0)
@@ -180,9 +178,6 @@ GEM
     pry (0.14.1)
       coderay (~> 1.1)
       method_source (~> 1.0)
-    pry-byebug (3.8.0)
-      byebug (~> 11.0)
-      pry (~> 0.10)
     pry-rails (0.3.9)
       pry (>= 0.10.4)
     public_suffix (4.0.6)
@@ -338,7 +333,6 @@ GEM
     zeitwerk (2.5.4)
 
 PLATFORMS
-  x86_64-darwin-21
   x86_64-linux
 
 DEPENDENCIES
@@ -364,7 +358,6 @@ DEPENDENCIES
   listen (~> 3.3)
   pg
   pry
-  pry-byebug
   pry-rails
   puma (~> 5.0)
   rack-mini-profiler (~> 2.0)

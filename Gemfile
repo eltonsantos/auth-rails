@@ -52,7 +52,6 @@ group :development, :test do
   gem 'faker'
   gem 'pry'
   gem 'pry-rails'
-  gem 'pry-byebug'
   gem 'brakeman'
   gem 'better_errors'
 
