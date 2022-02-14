@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
   
+  # get '/comments/:id' => 'moderations#show', as: :comments 
+  resources :comments, only: [:show] 
+
   resources :moderations
   
   resources :posts do
