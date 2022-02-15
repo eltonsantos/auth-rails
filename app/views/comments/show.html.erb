@@ -17,7 +17,7 @@
 
 <p>
   <b>Deseja aprovar esse comentário?</b>
-  <%= simple_form_for comment_path, method: 'put' do |c| %>
+  <%= simple_form_for @comment, method: 'put' do |c| %>
     <%= radio_button_tag 'comment[approved]', true, false, data: {behavior: "clickable"} %>Aproved
     <%= radio_button_tag 'comment[approved]', false, false, data: {behavior: "clickable"} %>Rejected
     <%= c.input :justify, input_html: { class: "teste", style: "display:none" }, label: false, placeholder: "Justify" %>

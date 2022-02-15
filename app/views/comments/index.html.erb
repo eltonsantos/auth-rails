@@ -2,7 +2,7 @@
 
 <h1>Moderations</h1>
 
-<h4>You have <%= @comments.where(approved: false).size %> comment(s) to moderate</h4>
+<h4>You have <%= @comments.where(approved: false, justify: nil).size %> comment(s) to moderate</h4>
 
 <table>
   <thead>
