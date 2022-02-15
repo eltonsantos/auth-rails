@@ -12,6 +12,7 @@ class CommentsController < ApplicationController
     @comment = Comment.find(params[:id])
     respond_to do |format|
       if @comment.update(comment_params)
+        CommentMailer.comment_moderated(@comment.id).deliver_later
         format.html { redirect_to comments_path, notice: "Comment was successfully updated." }
         format.json { render :index, status: :ok, location: @comment }
       else
