@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<h2>Comment details</h2>
+
+<p>
+  <b>User:</b>
+  <%= @comment.user.name %>
+</p>
+<p>
+  <b>Created At:</b>
+  <%= @comment.created_at.strftime("%d/%m/%Y - %H:%M:%S") %>
+</p>
+<p>
+  <b>Comment:</b>
+  <%= @comment.body %>
+</p>
+
+<p>
+  <b>Deseja aprovar esse comentário?</b>
+  <%= simple_form_for comment_path, method: 'put' do |c| %>
+    <%= radio_button_tag 'comment[approved]', true, false, data: {behavior: "clickable"} %>Aproved
+    <%= radio_button_tag 'comment[approved]', false, false, data: {behavior: "clickable"} %>Rejected
+    <%= c.input :justify, input_html: { class: "teste", style: "display:none" }, label: false, placeholder: "Justify" %>
+    <%= button_tag 'Salvar' %>
+  <% end %>
+</p>
+
+<script type="text/javascript">
+  $(document).ready(function() {    
+    $('input[type="radio"][data-behavior="clickable"]').click(function(evt) {
+      //alert("you chose the option: " + $(this).val());
+      if($(this).val() == "false") {
+        $('.teste').show();
+      }
+      else {
+        $('.teste').hide();
+      }
+    });
+  });
+</script>
