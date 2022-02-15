@@ -1,1 +1,6 @@
-Your comment was approved
+Your comment was <%= @comment.approved? ? "approved" : "rejected" %>.
+
+<% unless @comment.approved? %>
+  Esta é a justificativa:
+  <%= @comment.justify %>
+<% end %>
