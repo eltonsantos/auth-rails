@@ -7,7 +7,10 @@ class User < ApplicationRecord
 
   enum role: { superadmin: 0, auditor: 1, manager: 2, registred: 3 }
 
-  has_one_attached :avatar
+  has_one_attached :avatar do |attachable|
+    attachable.variant :thumb, resize: "100x100"
+  end
+
   has_one :profile, dependent: :destroy
   has_many :cars
   has_many :addresses, inverse_of: :user, dependent: :destroy
