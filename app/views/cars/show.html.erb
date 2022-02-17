@@ -1,6 +1,13 @@
 <p id="notice"><%= notice %></p>
 
 <p>
+  <strong>Photos:</strong>
+  <% @car.photos.each do |photo| %>
+    <%= image_tag photo.variant(:thumb) %>
+  <% end %>
+</p>
+
+<p>
   <strong>Name:</strong>
   <%= @car.name %>
 </p>
@@ -8,6 +15,11 @@
 <p>
   <strong>Marca:</strong>
   <%= @car.marca %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @car.price %>
 </p>
 
 <p>

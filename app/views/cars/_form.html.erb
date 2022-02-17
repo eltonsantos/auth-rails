@@ -12,6 +12,11 @@
   <% end %>
 
   <div class="field">
+    <%= form.label :photos %>
+    <%= form.file_field :photos, multiple: true %>
+  </div>
+
+  <div class="field">
     <%= form.label :name %>
     <%= form.text_field :name %>
   </div>
@@ -19,6 +24,11 @@
   <div class="field">
     <%= form.label :marca %>
     <%= form.text_field :marca %>
+  </div>
+
+  <div class="field">
+    <%= form.label :price %>
+    <%= form.text_field :price %>
   </div>
 
   <div class="field">
