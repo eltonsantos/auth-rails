@@ -2,5 +2,9 @@ pt-BR:
   comments:
     index:
       moderation: Moderação de comentário
+      qtd_comments: Você tem %{number} comentários para moderar
+      body: Comentário
+      user: Usuário
+      details: Detalhes
     update:
       success: Comentário foi atualizado com sucesso.
