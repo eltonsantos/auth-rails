@@ -1,0 +1,35 @@
+pt-BR:
+  cars:
+    create:
+      success: Carro foi criado com sucesso.
+    update:
+      success: Carro foi atualizado com sucesso.
+    destroy:
+      success: Carro foi removido com sucesso.
+    index:
+      name: Nome
+      mark: Marca
+      price: Preço
+      user: Usuário
+      comments: Comentários
+      show: Detalhes
+      edit: Editar
+      destroy: Remover
+      confirm: Você tem certeza?
+      new: Novo carro
+    show:
+      photos: Fotos
+      name: Nome
+      mark: Marca
+      price: Preço
+      user: Usuário
+      comments: Comentários
+      created_at: Criado em
+      comment: Comentário
+      create_comment: Criar comentário
+      send_comment: Enviar comentário
+      edit: Editar
+      back: Voltar
+    comments:
+      create:
+        success: O comentário foi criado e será postado após a aprovação do administrador.

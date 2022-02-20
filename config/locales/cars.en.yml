@@ -1,0 +1,14 @@
+en:
+  cars:
+    create:
+      success: Car was successfully created.
+    update:
+      success: Car was successfully updated.
+    destroy:
+      success: Car was successfully destroyed.
+    index:
+      name: Name
+      mark: Mark
+      price: Price
+      user: User
+      comments: Comments

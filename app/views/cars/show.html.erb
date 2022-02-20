@@ -1,52 +1,52 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Photos:</strong>
+  <strong><%= t('.photos') %></strong>
   <% @car.photos.each do |photo| %>
     <%= image_tag photo.variant(:thumb) %>
   <% end %>
 </p>
 
 <p>
-  <strong>Name:</strong>
+  <strong><%= t('.name') %></strong>
   <%= @car.name %>
 </p>
 
 <p>
-  <strong>Marca:</strong>
+  <strong><%= t('.mark') %></strong>
   <%= @car.marca %>
 </p>
 
 <p>
-  <strong>Price:</strong>
+  <strong><%= t('.price') %></strong>
   <%= number_to_currency_br(@car.price) %>
 </p>
 
 <p>
-  <strong>User:</strong>
+  <strong><%= t('.user') %></strong>
   <%= @car.user.name %>
 </p>
 
 ----------------------------------------------------------------
-<h3>Comments (<%= @car.comments.size %>)</h3>
+<h3><%= t('.comments') %> (<%= @car.comments.size %>)</h3>
 
 <% @car.comments.each do |comment| %>
   <p>
-    <b>User:</b>
+    <b><%= t('.user') %></b>
     <%= comment.user.name %>
   </p>
   <p>
-    <b>Created At:</b>
+    <b><%= t('.created_at') %></b>
     <%= comment.created_at.strftime("%d/%m/%Y") %>
   </p>
   <p>
-    <b>Comment:</b>
+    <b><%= t('.comment') %></b>
     <%= comment.body %>
   </p>
   <hr />
 <% end %>
 
-<h3>Send comment:</h3>
+<h3><%= t('.send_comment') %></h3>
 
 <%= simple_form_for [@car, Comment.new] do |f| %>
   <%= f.error_notification %>
@@ -55,11 +55,11 @@
   <%= f.input :body, label: false  %>
 
   <div class="form-actions">
-    <%= f.button :submit %>
+    <%= f.button :submit, t('.create_comment') %>
   </div>
 <% end %>
 
 ----------------------------------------------------------------
 <br />
-<%= link_to 'Edit', edit_car_path(@car) %> |
-<%= link_to 'Back', cars_path %>
+<%= link_to t('.edit'), edit_car_path(@car) %> |
+<%= link_to t('.back'), cars_path %>
