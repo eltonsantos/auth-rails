@@ -13,7 +13,7 @@ class CommentsController < ApplicationController
     respond_to do |format|
       if @comment.update(comment_params)
         CommentMailer.comment_moderated(@comment.id).deliver_later
-        format.html { redirect_to comments_path, notice: t('.update.success') }
+        format.html { redirect_to comments_path, notice: t('.success') }
         format.json { render :index, status: :ok, location: @comment }
       else
         format.html { render :show, status: :unprocessable_entity }
@@ -26,7 +26,7 @@ class CommentsController < ApplicationController
     @comment = @commentable.comments.new(comment_params)
     @comment.user = current_user
     @comment.save
-    redirect_to @commentable, notice: t('.success')
+    redirect_to @commentable, notice: t('.create.success')
   end
 
   private
