@@ -1,7 +1,7 @@
 class CommentsController < ApplicationController
 
   def index
-    @comments = Comment.where(approved: false, justify: nil)
+    @comments = Comment.for_approvation
   end
 
   def show
