@@ -2,8 +2,10 @@
 
 <p>
   <strong><%= t('.photos') %></strong>
-  <% @car.photos.each do |photo| %>
-    <%= image_tag photo.variant(:thumb) %>
+  <% if @car.photos.attached? %>
+    <% @car.photos.each do |photo| %>
+      <%= image_tag photo.variant(:thumb) %>
+    <% end %>
   <% end %>
 </p>
 
