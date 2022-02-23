@@ -1,0 +1,5 @@
+pt-BR:
+  posts:
+    comments:
+      create:
+        success: O comentário foi criado e será postado após a aprovação do administrador.
