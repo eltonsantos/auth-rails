@@ -6,6 +6,8 @@
     <% @car.photos.each do |photo| %>
       <%= image_tag photo.variant(:thumb) %>
     <% end %>
+  <% else %>
+    Não há imagem
   <% end %>
 </p>
 

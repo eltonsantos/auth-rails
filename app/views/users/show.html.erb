@@ -4,6 +4,8 @@
   <strong>Avatar:</strong>
   <% if @user.avatar.attached? %>
     <%= image_tag @user.avatar.variant(:thumb) %>
+  <% else %>
+    Não há imagem
   <% end %>
 </p>
 
