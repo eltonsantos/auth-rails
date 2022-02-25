@@ -60,6 +60,18 @@ class CarsController < ApplicationController
     end
   end
 
+  def add_observation
+    byebug
+    respond_to do |format|
+    end
+  end
+
+  def add_observation_params
+    {
+      observation: params[:poly_action][:observation]
+    }
+  end
+
   # DELETE /cars/1 or /cars/1.json
   def destroy
     @car.destroy

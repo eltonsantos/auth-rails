@@ -33,7 +33,7 @@
 
 ----------------------------------------------------------------
 <div style="color: #f90">
-  <h3>Observations</h3>
+  <h2>Observations</h2>
 
   <% @car.poly_actions.each do |note| %>
     <p>
@@ -44,17 +44,20 @@
       <b>Observation</b>
       <%= note.observation %>
     </p>
-    <hr />
+    -------------------
   <% end %>  
       
-  <%= simple_form_for [@car, Comment.new] do |f| %>
+  <%= simple_form_for @car, url: car_add_observation_path(@car), method: 'patch' do |f| %>
     <%= f.error_notification %>
     <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
-    <%= f.input :body, label: false  %>
+    <%= hidden_field_tag("poly_action[user_id]", current_user.id) %>
+    <%= hidden_field_tag("poly_action[observation]", @car.note) %>
+
+    <%= f.input :note, label: false  %>
 
     <div class="form-actions">
-      <%= f.button :submit, t('.create_comment') %>
+      <%= f.button :submit, "Add observation" %>
     </div>
   <% end %>
 </div>

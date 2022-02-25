@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   
   resources :cars do
     resources :comments, module: :cars
+    patch 'add_observation', to: "cars#add_observation"
   end
   
   devise_for :users, :path_prefix => 'devise'
