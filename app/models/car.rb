@@ -1,4 +1,5 @@
 class Car < ApplicationRecord
+
   audited
   
   belongs_to :user
@@ -8,4 +9,7 @@ class Car < ApplicationRecord
   end
   
   has_many :comments, as: :commentable
+
+  has_many :poly_actions, as: :resourceable, dependent: :destroy
+
 end
