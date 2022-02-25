@@ -35,18 +35,18 @@
 <div style="color: #f90">
   <h3>Observations</h3>
 
-  <% @car.notes.each do |note| %>
+  <% @car.poly_actions.each do |note| %>
     <p>
-      <b><%= t('.user') %></b>
-      <%= user.name %>
+      <b>Author</b>
+      <%= note.user.name %>
     </p>
     <p>
-      <b><%= t('.comment') %></b>
-      <%= car.note %>
+      <b>Observation</b>
+      <%= note.observation %>
     </p>
     <hr />
-  <% end %>
-
+  <% end %>  
+      
   <%= simple_form_for [@car, Comment.new] do |f| %>
     <%= f.error_notification %>
     <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
