@@ -32,6 +32,34 @@
 </p>
 
 ----------------------------------------------------------------
+<div style="color: #f90">
+  <h3>Observations</h3>
+
+  <% @car.notes.each do |note| %>
+    <p>
+      <b><%= t('.user') %></b>
+      <%= user.name %>
+    </p>
+    <p>
+      <b><%= t('.comment') %></b>
+      <%= car.note %>
+    </p>
+    <hr />
+  <% end %>
+
+  <%= simple_form_for [@car, Comment.new] do |f| %>
+    <%= f.error_notification %>
+    <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+    <%= f.input :body, label: false  %>
+
+    <div class="form-actions">
+      <%= f.button :submit, t('.create_comment') %>
+    </div>
+  <% end %>
+</div>
+
+----------------------------------------------------------------
 <h3><%= t('.comments') %> (<%= @car.comments.size %>)</h3>
 
 <% @car.comments.each do |comment| %>
