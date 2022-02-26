@@ -12,4 +12,6 @@ class Car < ApplicationRecord
 
   has_many :poly_actions, as: :resourceable, dependent: :destroy
 
+  scope :for_approvation, -> { where(approved: false, justify: nil) }
+
 end

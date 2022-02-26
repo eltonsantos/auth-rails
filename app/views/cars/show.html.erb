@@ -62,9 +62,9 @@
 </div>
 
 ----------------------------------------------------------------
-<h3><%= t('.comments') %> (<%= @car.comments.size %>)</h3>
+<h3><%= t('.comments') %> (<%= @car.comments.where(approved: true).size %>)</h3>
 
-<% @car.comments.each do |comment| %>
+<% @car.comments.where(approved: true).each do |comment| %>
   <p>
     <b><%= t('.user') %></b>
     <%= comment.user.name %>

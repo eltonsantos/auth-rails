@@ -35,7 +35,7 @@
         <td><%= car.marca %></td>
         <td><%= number_to_currency_br(car.price) %></td>
         <td><%= car.user.name %> (<%= car.user.id %>)</td>
-        <td><%= car.comments.size %></td>
+        <td><%= car.comments.where(approved: true).size %></td>
         <td><%= car.poly_actions.size %></td>
         <td><%= link_to t('.show'), car %></td>
         <td><%= link_to t('.edit'), edit_car_path(car) %></td>
