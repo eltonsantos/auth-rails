@@ -2,6 +2,8 @@ Rails.application.routes.draw do
   
   resources :comments, path: 'moderations'
 
+  get 'moderate_all', to: 'comments#moderate_all'
+
   resources :posts do
     resources :comments, module: :posts
   end

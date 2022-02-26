@@ -1,0 +1,14 @@
+<h1>All comment to moderate</h1>
+
+<% @comments.each do |comment| %>
+  <p>
+    <b>Who</b>?:</b>
+    <%= comment.user.name %>
+    <b>Approved:</b>
+    <%= comment.approved %>
+    <b>Justify:</b>
+    <%= comment.justify %>
+  </p>
+<% end %>
+
+<%= link_to t('.back'), comments_path %>

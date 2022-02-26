@@ -29,6 +29,10 @@ class CommentsController < ApplicationController
     redirect_to @commentable, notice: t('.success')
   end
 
+  def moderate_all
+    @comments = Comment.edit_justify
+  end
+
   private
 
     def comment_params
