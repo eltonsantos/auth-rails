@@ -61,14 +61,23 @@ class CarsController < ApplicationController
   end
 
   def add_observation
-    byebug
+    @car = Car.find(params[:car_id])
+    @car.poly_actions.new(add_observation_params)
     respond_to do |format|
+      if @car.save
+        format.html { redirect_to @car, notice: "Consideration add with sucess." }
+        format.json { render :show, status: :ok, location: @car }
+      else
+        format.html { render :show, status: :unprocessable_entity }
+        format.json { render json: @car.errors, status: :unprocessable_entity }
+      end
     end
   end
 
   def add_observation_params
     {
-      observation: params[:poly_action][:observation]
+      observation: params[:car][:note],
+      user_id: params[:poly_action][:user_id]
     }
   end
 

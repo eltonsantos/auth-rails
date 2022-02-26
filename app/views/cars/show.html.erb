@@ -52,9 +52,8 @@
     <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
     <%= hidden_field_tag("poly_action[user_id]", current_user.id) %>
-    <%= hidden_field_tag("poly_action[observation]", @car.note) %>
 
-    <%= f.input :note, label: false  %>
+    <%= f.input :note, label: false, as: :text  %>
 
     <div class="form-actions">
       <%= f.button :submit, "Add observation" %>
