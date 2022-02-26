@@ -1,4 +1,4 @@
-class ModerationsController < InheritedResources::Base
+class ModerationsController < ApplicationController
 
   load_and_authorize_resource
 

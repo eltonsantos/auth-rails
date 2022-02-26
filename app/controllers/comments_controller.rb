@@ -1,5 +1,6 @@
 class CommentsController < ApplicationController
 
+
   def index
     @comments = Comment.for_approvation
   end
