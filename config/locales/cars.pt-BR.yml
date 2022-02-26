@@ -12,6 +12,7 @@ pt-BR:
       price: Preço
       user: Usuário
       comments: Comentários
+      notes: Observações
       show: Detalhes
       edit: Editar
       destroy: Remover
