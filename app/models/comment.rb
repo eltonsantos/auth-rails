@@ -1,18 +1,20 @@
 class Comment < ApplicationRecord
 
   audited
+
+  attr_accessor :current_user
   
   belongs_to :user
   belongs_to :commentable, polymorphic: true
 
-  validates :justify, presence: true, unless: :comment_rejected
+  # validates :justify, presence: true, if: Proc.new{ |f| f.approved == false }
 
-  scope :for_approvation, -> { where(approved: false, justify: nil) }
+  scope :for_approvation, -> { where(approved: false, justify: "") }
 
   scope :edit_justify, -> { where("justify <> ''") }
 
-  def comment_rejected
-    self.approved?
-  end
+  # def comment_rejected
+  #   !self.user.admin? and !self.approved? # false and false and false
+  # end
  
 end
