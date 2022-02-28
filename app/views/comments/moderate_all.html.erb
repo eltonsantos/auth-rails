@@ -1,8 +1,6 @@
 <h1>Edit all justifies</h1>
 
-
-<%= simple_form_for @comments, method: 'put' do |c| %>
-  <% c.each do |comment| %>
+  <% @comments.each do |comment| %>
     <p>
       <b>Who</b>?:</b>
       <%= comment.user.name %>
@@ -15,13 +13,14 @@
       <p>
         <b>Justify:</b>
       </p>
-      <p>
-        <%= comment.input :justify, label: false, placeholder: "Justify" %>
-      </p>
+      <%= simple_form_for comment, method: 'put' do |c| %>
+        <p>
+          <%= c.input :justify, label: false, placeholder: "Justify" %>
+        </p>
+      <% end %>
     </p>
     <hr />
     <%= button_tag 'Salvar' %>
   <% end %>
-<% end %>
 
 <%= link_to t('.back'), comments_path %>
