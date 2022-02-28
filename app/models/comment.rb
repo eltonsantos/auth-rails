@@ -11,7 +11,7 @@ class Comment < ApplicationRecord
 
   scope :for_approvation, -> { where(approved: false, justify: "") }
 
-  scope :edit_justify, -> { where("justify <> ''") }
+  scope :edit_justify, -> { where(approved: false) }
 
   # def comment_rejected
   #   !self.user.admin? and !self.approved? # false and false and false

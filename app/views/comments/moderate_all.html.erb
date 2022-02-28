@@ -1,19 +1,27 @@
 <h1>Edit all justifies</h1>
 
-<% @comments.each do |comment| %>
-  <p>
-    <b>Who</b>?:</b>
-    <%= comment.user.name %>
-    <b>Approved:</b>
-    <%= comment.approved %>
+
+<%= simple_form_for @comments, method: 'put' do |c| %>
+  <% c.each do |comment| %>
     <p>
-      <b>Justify:</b>
+      <b>Who</b>?:</b>
+      <%= comment.user.name %>
+      <b>Approved:</b>
+      <%= comment.approved %>
+      <p>
+        <b>Comment:</b>
+        <%= comment.body %>
+      </p>
+      <p>
+        <b>Justify:</b>
+      </p>
+      <p>
+        <%= comment.input :justify, label: false, placeholder: "Justify" %>
+      </p>
     </p>
-    <p>
-      <%= comment.justify %>
-    </p>
-  </p>
-  <hr />
+    <hr />
+    <%= button_tag 'Salvar' %>
+  <% end %>
 <% end %>
 
 <%= link_to t('.back'), comments_path %>
