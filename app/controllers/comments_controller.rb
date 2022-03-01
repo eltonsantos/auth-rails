@@ -34,6 +34,9 @@ class CommentsController < ApplicationController
     @comments = Comment.edit_justify
   end
 
+  def all_justify_moderation
+  end
+
   private
 
     def comment_params

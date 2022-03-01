@@ -4,6 +4,8 @@ Rails.application.routes.draw do
 
   get 'moderate_all', to: 'comments#moderate_all'
 
+  post 'all_justify_moderation', to: 'comments#all_justify_moderation'
+
   resources :posts do
     resources :comments, module: :posts
   end
