@@ -36,9 +36,10 @@ class CommentsController < ApplicationController
 
   def all_justify_moderation
     @params = params[:comment][:comment]
-
+    byebug
     @params.keys.each do |c|
       @comm = Comment.find(c)
+
       @c = @comm.update(justify: @params[c][:justify])
     end
     

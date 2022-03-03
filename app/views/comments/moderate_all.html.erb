@@ -18,6 +18,7 @@
       </p>
     </p>
     <%= f.simple_fields_for "comment[]", comment do |justify| %>
+      <%= hidden_field_tag("comment[visible]", true) %>
       <p>
         <%= justify.input :justify, label: false, placeholder: "Justify" %>
       </p>
