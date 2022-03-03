@@ -40,7 +40,7 @@ class CommentsController < ApplicationController
     @params.keys.each do |c|
       @comm = Comment.find(c)
 
-      @c = @comm.update(justify: @params[c][:justify])
+      @c = @comm.update(justify: @params[c][:justify], visible: params[:comment][:visible])
     end
     
     redirect_to "/moderate_all", notice: "Justificativas atualizadas com sucesso"
