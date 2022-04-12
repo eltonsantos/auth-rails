@@ -1,0 +1,7 @@
+en:
+  enumerations:
+    role:
+      superadmin: 'Superadmin'
+      auditor: 'Auditor'
+      manager: 'Manager'
+      registred: 'Registred'

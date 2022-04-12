@@ -1,0 +1,6 @@
+en:
+  enumerations:
+    relationship_status:
+      single: 'Single'
+      married: 'Married'
+      divorced: 'Divorced'
